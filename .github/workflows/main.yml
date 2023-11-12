@@ -25,4 +25,4 @@ jobs:
       - name: execute python workflows from bash script
         env: 
           HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
-        run: python3 iris-feature-pipeline-daily.py
+        run: python3 ./serverless-ml-intro-lab-1/iris-feature-pipeline-daily.py
