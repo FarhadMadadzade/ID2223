@@ -1,0 +1,23 @@
+name: Push Folder
+on:
+  push:
+    branches: [ main ]
+jobs:
+  copy-folder:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Get Commit Message
+      run: echo "::set-env name=COMMIT_MSG::$(git log -1 --pretty=%B)"
+    - name: Copy Folder
+      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
+      env:
+        API_TOKEN_HUGGINGFACE: ${{ secrets.API_TOKEN_HUGGINGFACE }}
+      with:
+        source_folder: '../serverless-ml-intro-lab-1/huggingface-spaces-iris'
+        destination_repo: 'Artanis1551/IID2223'
+        destination_folder: ''
+        user_email: 'calinp@kth.se'
+        user_name: 'Calin Petrea'
+        commit_msg: ${{ env.COMMIT_MSG }}
