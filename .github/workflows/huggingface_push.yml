@@ -9,7 +9,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Copy Folder
-      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
+      uses: huggingface/copy_folder_to_another_repo_action@v1
       env:
         API_TOKEN_HUGGINGFACE: ${{ secrets.API_TOKEN_HUGGINGFACE }}
       with:
