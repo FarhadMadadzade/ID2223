@@ -14,7 +14,7 @@ jobs:
         API_TOKEN_HUGGINGFACE: ${{ secrets.API_TOKEN_HUGGINGFACE }}
       with:
         source_folder: '../serverless-ml-intro-lab-1/huggingface-spaces-iris'
-        destination_repo: 'Artanis1551/IID2223'
+        destination_repo: 'https://huggingface.co/spaces/Artanis1551/IID2223'
         destination_folder: ''
         user_email: 'calinp@kth.se'
         user_name: 'Calin Petrea'
