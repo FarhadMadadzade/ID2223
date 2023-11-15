@@ -38,7 +38,7 @@ def g():
     y_pred = model.predict(batch_data)
     #print(y_pred)
     offset = random.randint(1, y_pred.size) 
-    print("Offset: " + offset)
+    print("Offset: " + str(offset))
     flower = y_pred[y_pred.size-offset]
     flower_url = "https://raw.githubusercontent.com/featurestoreorg/serverless-ml-course/main/src/01-module/assets/" + flower + ".png"
     print("Flower predicted: " + flower)
