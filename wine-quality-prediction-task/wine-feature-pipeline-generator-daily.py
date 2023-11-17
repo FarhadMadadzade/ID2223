@@ -3,4 +3,5 @@ def main():
     import pandas as pd
     import random
 
-    hopsworks_project = project.login()
+    hopsworks_project = hopsworks.login()
+    fs = hopsworks.project_featurestore()
