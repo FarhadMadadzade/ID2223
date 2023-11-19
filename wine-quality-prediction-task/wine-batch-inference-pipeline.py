@@ -30,7 +30,7 @@ offset = random.randint(1, y_pred.size)
 print("Offset: " + str(offset))
 wine = y_pred[y_pred.size-offset]
 print("Wine quality predicted: " + str(wine))        
-wine_url = "https://github.com/FarhadMadadzade/ID2223/blob/c18fdfafc72bcf7455c7e7fde54a3c76ef0f3bba/wine-quality-prediction-task/images/" + str(int(flower)) + ".jpg"
+wine_url = "https://github.com/FarhadMadadzade/ID2223/blob/c18fdfafc72bcf7455c7e7fde54a3c76ef0f3bba/wine-quality-prediction-task/images/" + str(int(wine)) + ".jpg"
 img = Image.open(requests.get(wine_url, stream=True).raw)            
 img.save("./latest_wine.png")
 dataset_api = project.get_dataset_api()    
