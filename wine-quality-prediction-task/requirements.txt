@@ -1,7 +1,7 @@
 #If you have windows, install twofish
 # twofish
 hopsworks
-joblib
+joblib==1.1.0
 scikit-learn==1.1.1
 seaborn
 dataframe-image

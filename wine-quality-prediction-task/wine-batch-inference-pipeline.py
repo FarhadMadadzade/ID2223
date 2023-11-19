@@ -71,7 +71,6 @@ print("Number of different wine quality predictions to date: " + str(predictions
 if predictions.value_counts().count() == 3:
     results = confusion_matrix(labels, predictions)
     visualize_dfs(results)
-
     df_cm = pd.DataFrame(results, ['True 1', 'True 2', 'True 3'], 
                     ['Pred 1', 'Pred 2', 'Pred 3']) 
 
@@ -83,3 +82,8 @@ else:
     print("You need 3 different quality predictions to create the confusion matrix.")
     print("Run the batch inference pipeline more times until you get 3 different quality wines") 
 
+def visualize_dfs(dataframes):
+    for df in dataframes:
+        # Visualize the data
+        df.hist(figsize=(10, 10))
+        plt.show()
