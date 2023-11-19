@@ -8,5 +8,9 @@ Part 2 of the lab is to do everything from scratch for an other dataset, in this
 3. Daily feature pipeline. This pipeline randomly picks a quality between 1-3. It then fetches the feature group for that specific quality (one of the 3 ones mentioned in the previous point) and generates a new wine. For each feature it takes a random value based on a gaussian distribution with the mean and standard deviation for each feature in the feature group. It then inserts this new wine with its features into the feature group containing all the wines.
 4. training pipeline. The training pipeline where we generate the model to be used
 5. inference pipeline. where we run inference on the model
-6. Hugginface interface. The UI for the user where one can enter different values for the features and the model prediction is presented.
-7. Hugginface monitor interface. The UI for monitoring the last added wine to the feature store.
+6. Hugginface Interactive UI. The UI for the user where one can enter different values for the features and the model prediction is presented.
+7. Hugginface Dashboard UI for monitoring. The UI for monitoring the last added wine to the feature store.
+
+Hugginface Interactive UI URL: https://huggingface.co/spaces/ID2223-labs/Wine
+
+Hugginface Dashboard UI URL: https://huggingface.co/spaces/ID2223-labs/Wine_Monitoring
