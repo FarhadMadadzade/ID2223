@@ -13,4 +13,4 @@ Part 2 of the lab is to do everything from scratch for an other dataset, in this
 
 Hugginface Interactive UI URL: https://huggingface.co/spaces/ID2223-labs/Wine
 
-Hugginface Dashboard UI URL: 
+Hugginface Dashboard UI URL: https://huggingface.co/spaces/ID2223-labs/Wine_Monitoring
