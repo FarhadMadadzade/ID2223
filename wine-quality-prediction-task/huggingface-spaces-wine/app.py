@@ -15,10 +15,10 @@ model_dir = model.download()
 model = joblib.load(model_dir + "/wine_model.pkl")
 print("Model downloaded")
 
-def wine(alcohol, volatile_acidity, chlorides, sulphates, wine_type):
+def wine(alcohol, volatile_acidity, chlorides, sulphates, free_sulfur_dioxide):
     print("Calling function")
-    df = pd.DataFrame([[alcohol, volatile_acidity, chlorides, sulphates, wine_type]], 
-                      columns=['alcohol','volatile_acidity','chlorides','sulphates', 'wine_type'])
+    df = pd.DataFrame([[alcohol, volatile_acidity, chlorides, sulphates, free_sulfur_dioxide]], 
+                      columns=['alcohol','volatile_acidity','chlorides','sulphates', 'free_sulfur_dioxide'])
     print("Predicting")
     print(df)
     # 'res' is a list of predictions returned as the label.
@@ -39,7 +39,7 @@ demo = gr.Interface(
         gr.inputs.Number(default=1.0, label="volatile acidity"),
         gr.inputs.Number(default=2.0, label="chlorides"),
         gr.inputs.Number(default=1.0, label="sulphates"),
-        gr.inputs.Number(default=1.0, label="wine type"),
+        gr.inputs.Number(default=1.0, label="free sulfur dioxide"),
         ],
     outputs=gr.outputs.Textbox(label="Quality"))
 

@@ -34,6 +34,7 @@ def g():
     
     feature_view = fs.get_feature_view(name="wine_features", version=1)
     batch_data = feature_view.get_batch_data()
+    batch_data = batch_data.drop('wine_type', axis=1)
     
     y_pred = model.predict(batch_data)
     #print(y_pred)
