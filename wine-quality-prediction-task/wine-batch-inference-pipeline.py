@@ -30,7 +30,7 @@ offset = random.randint(1, y_pred.size)
 print("Offset: " + str(offset))
 wine = y_pred[y_pred.size-offset]
 print("Wine quality predicted: " + str(wine))        
-wine_url = "https://github.com/FarhadMadadzade/ID2223/blob/c18fdfafc72bcf7455c7e7fde54a3c76ef0f3bba/wine-quality-prediction-task/images/" + str(int(wine)) + ".jpg"
+wine_url = "https://github.com/FarhadMadadzade/ID2223/blob/c18fdfafc72bcf7455c7e7fde54a3c76ef0f3bba/wine-quality-prediction-task/images/" + str(int(wine)) + ".png"
 img = Image.open(requests.get(wine_url, stream=True).raw)            
 img.save("./latest_wine.png")
 dataset_api = project.get_dataset_api()    
@@ -41,7 +41,7 @@ df = wine_fg.read()
 #print(df)
 label = df.iloc[-offset]["quality"]
 print("Wine quality actual: " + str(label))
-label_url = "https://github.com/FarhadMadadzade/ID2223/blob/c18fdfafc72bcf7455c7e7fde54a3c76ef0f3bba/wine-quality-prediction-task/images/" + str(int(label)) + ".jpg"
+label_url = "https://github.com/FarhadMadadzade/ID2223/blob/c18fdfafc72bcf7455c7e7fde54a3c76ef0f3bba/wine-quality-prediction-task/images/" + str(int(label)) + ".png"
 img = Image.open(requests.get(label_url, stream=True).raw)            
 img.save("./actual_wine.png")
 dataset_api.upload("./actual_wine.png", "Resources/images", overwrite=True)
