@@ -4,16 +4,11 @@ def main():
     import pandas as pd
     import random
 
-    root_path = os.path.dirname(os.path.abspath(__file__))
-    with open(os.path.join(root_path, "credentials.conf"), "r") as f:
-        api_key = f.read()
-        api_key = api_key.split("=")[1].strip()
-
-    hopsworks_project = hopsworks.login(api_key_value=api_key)
+    hopsworks_project = hopsworks.login()
     # hopsworks_project = hopsworks.login()
     fs = hopsworks_project.get_feature_store()
 
-    random_quality = random.randint(1, 4)
+    random_quality = random.randint(1, 3)
     wine_feature_per_quality = fs.get_feature_group(
         name=f"wine_features_quality_{random_quality}", version=1
     )
