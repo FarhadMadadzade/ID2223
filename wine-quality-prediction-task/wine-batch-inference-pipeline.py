@@ -35,20 +35,20 @@ def g():
     feature_view = fs.get_feature_view(name="wine_features", version=1)
     batch_data = feature_view.get_batch_data()
     batch_data = batch_data.drop('wine_type', axis=1)
-    
+
     y_pred = model.predict(batch_data)
     #print(y_pred)
     offset = random.randint(1, y_pred.size) 
     print("Offset: " + str(offset))
     wine = y_pred[y_pred.size-offset]
-    print("Wine quality predicted: " + wine)        
+    print("Wine quality predicted: " + str(wine))        
     dataset_api = project.get_dataset_api()    
    
     wine_fg = fs.get_feature_group(name="wine_features", version=1)
     df = wine_fg.read() 
     #print(df)
     label = df.iloc[-offset]["variety"]
-    print("Wine quality actual: " + label)
+    print("Wine quality actual: " + str(label))
     
     monitor_fg = fs.get_or_create_feature_group(name="wine_predictions",
                                                 version=1,
@@ -58,8 +58,8 @@ def g():
     
     now = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
     data = {
-        'prediction': [wine],
-        'label': [label],
+        'prediction': [str(wine)],
+        'label': [str(label)],
         'datetime': [now],
        }
     monitor_df = pd.DataFrame(data)
