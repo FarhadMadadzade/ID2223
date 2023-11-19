@@ -71,8 +71,8 @@ print("Number of different wine quality predictions to date: " + str(predictions
 if predictions.value_counts().count() == 3:
     results = confusion_matrix(labels, predictions)
 
-    df_cm = pd.DataFrame(results, ['True 1', 'True 2', 'True 3', 'True', 'True 5'], 
-                    ['Pred 1', 'Pred 2', 'Pred 3', 'Pred 4', 'Pred 5']) 
+    df_cm = pd.DataFrame(results, ['True 1', 'True 2', 'True 3'], 
+                    ['Pred 1', 'Pred 2', 'Pred 3']) 
 
     cm = sns.heatmap(df_cm, annot=True)
     fig = cm.get_figure()
