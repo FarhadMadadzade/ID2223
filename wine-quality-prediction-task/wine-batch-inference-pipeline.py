@@ -28,12 +28,12 @@ y_pred = model.predict(batch_data)
 #print(y_pred)
 offset = random.randint(1, y_pred.size) 
 print("Offset: " + str(offset))
-wine_pred = y_pred[y_pred.size-offset]
-print("Wine quality predicted: " + str(wine_pred))        
+wine = y_pred[y_pred.size-offset]
+print("Wine quality predicted: " + str(wine))        
 dataset_api = project.get_dataset_api()    
 
 wine_fg = fs.get_feature_group(name="wine_features", version=1)
-df = wine_pred.read() 
+df = wine_fg.read() 
 #print(df)
 label = df.iloc[-offset]["quality"]
 print("Wine quality actual: " + str(label))
@@ -46,7 +46,7 @@ monitor_fg = fs.get_or_create_feature_group(name="wine_predictions",
 
 now = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 data = {
-    'prediction': [str(wine_pred)],
+    'prediction': [str(wine)],
     'label': [str(label)],
     'datetime': [now],
     }
