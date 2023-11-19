@@ -28,7 +28,7 @@ def g():
     fs = project.get_feature_store()
     
     mr = project.get_model_registry()
-    model = mr.get_model("wine_model", version=1)
+    model = mr.get_model("wine_model", version=5)
     model_dir = model.download()
     model = joblib.load(model_dir + "/wine_model.pkl")
     
@@ -90,8 +90,8 @@ def g():
         fig.savefig("./confusion_wine_matrix.png")
         dataset_api.upload("./confusion_wine_matrix.png", "Resources/images", overwrite=True)
     else:
-        print("You need 3 different flower predictions to create the confusion matrix.")
-        print("Run the batch inference pipeline more times until you get 3 different iris flower predictions") 
+        print("You need 3 different quality predictions to create the confusion matrix.")
+        print("Run the batch inference pipeline more times until you get 3 different quality wines") 
 
 
 if __name__ == "__main__":
