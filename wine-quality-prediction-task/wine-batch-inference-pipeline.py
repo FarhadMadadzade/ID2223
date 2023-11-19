@@ -47,7 +47,7 @@ def g():
     wine_fg = fs.get_feature_group(name="wine_features", version=1)
     df = wine_fg.read() 
     #print(df)
-    label = df.iloc[-offset]["variety"]
+    label = df.iloc[-offset]["quality"]
     print("Wine quality actual: " + str(label))
     
     monitor_fg = fs.get_or_create_feature_group(name="wine_predictions",
@@ -78,8 +78,8 @@ def g():
     predictions = history_df[['prediction']]
     labels = history_df[['label']]
 
-    # Only create the confusion matrix when our iris_predictions feature group has examples of all 3 iris flowers
-    print("Number of different flower predictions to date: " + str(predictions.value_counts().count()))
+    # Only create the confusion matrix when our wine_predictions feature group has examples of all 3 wine qualities
+    print("Number of different wine quality predictions to date: " + str(predictions.value_counts().count()))
     if predictions.value_counts().count() == 3:
         results = confusion_matrix(labels, predictions)
     
