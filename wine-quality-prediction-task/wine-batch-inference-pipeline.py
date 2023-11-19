@@ -12,17 +12,11 @@ import seaborn as sns
 import requests
 import random
 
-def visualize_dfs(dataframes):
-    for df in dataframes:
-        # Visualize the data
-        df.hist(figsize=(10, 10))
-        plt.show()
-
 project = hopsworks.login()
 fs = project.get_feature_store()
 
 mr = project.get_model_registry()
-model = mr.get_model("wine_model", version=5)
+model = mr.get_model("wine_model", version=6)
 model_dir = model.download()
 model = joblib.load(model_dir + "/wine_model.pkl")
 
@@ -76,7 +70,7 @@ labels = history_df[['label']]
 print("Number of different wine quality predictions to date: " + str(predictions.value_counts().count()))
 if predictions.value_counts().count() == 3:
     results = confusion_matrix(labels, predictions)
-    visualize_dfs(results)
+
     df_cm = pd.DataFrame(results, ['True 1', 'True 2', 'True 3'], 
                     ['Pred 1', 'Pred 2', 'Pred 3']) 
 
