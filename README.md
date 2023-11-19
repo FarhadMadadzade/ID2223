@@ -12,4 +12,5 @@ Part 2 of the lab is to do everything from scratch for an other dataset, in this
 7. Hugginface Dashboard UI for monitoring. The UI for monitoring the last added wine to the feature store.
 
 Hugginface Interactive UI URL: https://huggingface.co/spaces/ID2223-labs/Wine
+
 Hugginface Dashboard UI URL: 
