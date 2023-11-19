@@ -12,6 +12,12 @@ import seaborn as sns
 import requests
 import random
 
+def visualize_dfs(dataframes):
+    for df in dataframes:
+        # Visualize the data
+        df.hist(figsize=(10, 10))
+        plt.show()
+
 project = hopsworks.login()
 fs = project.get_feature_store()
 
@@ -81,9 +87,3 @@ if predictions.value_counts().count() == 3:
 else:
     print("You need 3 different quality predictions to create the confusion matrix.")
     print("Run the batch inference pipeline more times until you get 3 different quality wines") 
-
-def visualize_dfs(dataframes):
-    for df in dataframes:
-        # Visualize the data
-        df.hist(figsize=(10, 10))
-        plt.show()
