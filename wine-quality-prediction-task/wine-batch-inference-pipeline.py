@@ -46,8 +46,8 @@ monitor_fg = fs.get_or_create_feature_group(name="wine_predictions",
 
 now = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 data = {
-    'prediction': [str(wine)],
-    'label': [str(label)],
+    'prediction': [int(wine)],
+    'label': [int(label)],
     'datetime': [now],
     }
 monitor_df = pd.DataFrame(data)
