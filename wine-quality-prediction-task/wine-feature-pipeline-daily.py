@@ -5,7 +5,6 @@ def main():
     import random
 
     hopsworks_project = hopsworks.login()
-    # hopsworks_project = hopsworks.login()
     fs = hopsworks_project.get_feature_store()
 
     random_quality = random.randint(1, 3)
