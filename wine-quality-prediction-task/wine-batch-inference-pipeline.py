@@ -31,7 +31,7 @@ print("Offset: " + str(offset))
 wine = y_pred[y_pred.size - offset]
 print("Wine quality predicted: " + str(wine))
 wine_url = (
-    "https://raw.githubusercontent.com/FarhadMadadzade/ID2223/2bbc0d1048887b3691f0e59c9d8d3d36bad2929f/wine-quality-prediction-task/images/"
+    "https://raw.githubusercontent.com/FarhadMadadzade/ID2223/99623bfa563d6737c2193421e4b5cf98efdc561e/wine-quality-prediction-task/images/"
     + str(int(wine))
     + "_glass.png"
 )
