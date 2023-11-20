@@ -46,9 +46,9 @@ df = wine_fg.read()
 label = df.iloc[-offset]["quality"]
 print("Wine quality actual: " + str(label))
 label_url = (
-    "https://raw.githubusercontent.com/FarhadMadadzade/ID2223/2bbc0d1048887b3691f0e59c9d8d3d36bad2929f/wine-quality-prediction-task/images/"
-    + str(int(label))
-    + ".png"
+    "https://raw.githubusercontent.com/FarhadMadadzade/ID2223/99623bfa563d6737c2193421e4b5cf98efdc561e/wine-quality-prediction-task/images/"
+    + str(int(wine))
+    + "_glass.png"
 )
 img = Image.open(requests.get(label_url, stream=True).raw)
 img.save("./actual_wine.png")
